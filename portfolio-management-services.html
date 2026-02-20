@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DPDP CMP — Portfolio Management Services Notice</title>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --text:#e6e9f2;
+      --muted:#a9b2c7;
+      --line:rgba(255,255,255,.10);
+      --chip:rgba(255,255,255,.09);
+      --good:#22c55e;
+      --warn:#f59e0b;
+      --accent:#60a5fa;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(96,165,250,.25), transparent 55%),
+        radial-gradient(1000px 500px at 90% 0%, rgba(167,139,250,.18), transparent 50%),
+        var(--bg);
+      color:var(--text);
+    }
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px;}
+    header{display:flex;justify-content:space-between;gap:16px;margin-bottom:18px;}
+    .brand{display:flex;gap:12px;}
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg,#60a5fa,#a78bfa);
+      display:grid;place-items:center;font-weight:800;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:18px;margin:0 0 6px;font-weight:800;}
+    .subtitle{font-size:13px;color:var(--muted);max-width:760px}
+
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      cursor:pointer;font-size:13px;font-weight:650;
+    }
+    .btn.primary{border-color:rgba(96,165,250,.35);background:rgba(96,165,250,.18)}
+    .btn.danger{border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.12)}
+
+    .pillrow{display:flex;gap:8px;margin:14px 0 18px;flex-wrap:wrap}
+    .pill{
+      background:var(--chip);
+      border:1px solid var(--line);
+      padding:8px 10px;border-radius:999px;
+      font-size:12px;color:var(--muted);
+      display:flex;gap:8px;align-items:center;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:#999}
+    .dot.good{background:#22c55e}
+    .dot.accent{background:#60a5fa}
+    .dot.warn{background:#f59e0b}
+
+    .grid{display:grid;gap:14px}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .cardhead{
+      padding:14px;
+      display:flex;justify-content:space-between;cursor:pointer;
+    }
+    .cardtitle{display:flex;gap:10px}
+    .ico{
+      width:34px;height:34px;border-radius:12px;
+      background:rgba(255,255,255,.07);
+      display:grid;place-items:center;
+    }
+    .meta{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      font-size:12px;color:var(--muted);
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px 8px;border-radius:999px;
+    }
+    .toggle{
+      width:52px;height:30px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+      position:relative;
+    }
+    .toggle[aria-checked="true"]{background:rgba(34,197,94,.24)}
+    .knob{
+      position:absolute;top:3px;left:3px;
+      width:24px;height:24px;border-radius:999px;
+      background:#fff;box-shadow:0 6px 14px rgba(0,0,0,.25);
+    }
+    .toggle[aria-checked="true"] .knob{transform:translateX(22px)}
+
+    .body{display:none;padding:14px;border-top:1px solid var(--line);background:rgba(15,23,42,.35)}
+
+    .subcard{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.045);
+      border-radius:16px;padding:12px;margin-top:12px;
+    }
+    .subhead{display:flex;justify-content:space-between;margin-bottom:8px}
+    .row{display:grid;gap:10px}
+    @media(min-width:760px){.row{grid-template-columns:1fr 1fr}}
+    .label{font-size:12px;color:var(--muted)}
+    ul{padding-left:16px;font-size:13px;line-height:1.45}
+    .small{font-size:12.5px}
+
+    details{
+      margin-top:10px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      border-radius:14px;padding:10px;
+    }
+    details summary{cursor:pointer;font-weight:750;font-size:13px}
+    details .content{margin-top:10px;font-size:12.5px;color:var(--muted)}
+
+    .footer{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      border-radius:var(--radius);
+      padding:14px;
+    }
+    .footer .cols{display:grid;gap:12px}
+    @media(min-width:820px){.footer .cols{grid-template-columns:1fr 1fr 1fr}}
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo">DP</div>
+    <div>
+      <h1>Portfolio Management Services (PMS) — Product Notice for Consent</h1>
+      <p class="subtitle">
+        Covers discretionary and non-discretionary PMS onboarding, portfolio management,
+        reporting, compliance, and security. Optional choices are separate and configurable.
+      </p>
+
+      <div class="meta">
+        <span class="chip"><strong>Data Fiduciary:</strong> [AMC Legal Name]</span>
+        <span class="chip"><strong>Notice:</strong> PMS_NOTICE</span>
+        <span class="chip"><strong>Version:</strong> v1.0</span>
+        <span class="chip"><strong>Effective:</strong> [DD-MMM-YYYY]</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn primary">Accept all optional</button>
+    <button class="btn danger">Deny all optional</button>
+  </div>
+</header>
+
+<div class="pillrow">
+  <div class="pill"><span class="dot good"></span>Mandatory (locked)</div>
+  <div class="pill"><span class="dot accent"></span>Optional (toggle)</div>
+  <div class="pill"><span class="dot warn"></span>Details available</div>
+</div>
+
+<main class="grid">
+<article class="card">
+  <div class="cardhead" onclick="this.nextElementSibling.style.display =
+    this.nextElementSibling.style.display==='block'?'none':'block'">
+    <div class="cardtitle">
+      <div class="ico">📊</div>
+      <div>
+        <strong>PMS Account</strong>
+        <div class="meta">
+          <span class="chip">Client ID •••• 2841</span>
+          <span class="chip">Type: Discretionary</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- CORE -->
+    <div class="subcard">
+      <div class="subhead">
+        <h3>PMS portfolio management & execution</h3>
+        <button class="toggle" aria-checked="true" disabled><span class="knob"></span></button>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="label">Purpose</div>
+          <ul>
+            <li>Onboard PMS clients and execute investment mandates</li>
+            <li>Manage portfolios as per agreed discretion / instructions</li>
+            <li>Provide periodic statements, performance and holdings reports</li>
+          </ul>
+        </div>
+        <div>
+          <div class="label">Withdrawal impact</div>
+          <div class="small">
+            Mandatory processing is required to manage the PMS portfolio.
+            Withdrawal is not possible while the PMS relationship is active.
+          </div>
+        </div>
+      </div>
+
+      <details>
+        <summary>Details (data used, sharing, retention)</summary>
+        <div class="content">
+          <strong>Data used:</strong> enhanced KYC, financial & net-worth details,
+          investment objectives, portfolio holdings, trade records.<br><br>
+          <strong>Sharing:</strong> custodians, brokers, trustees, auditors,
+          regulators (SEBI) under safeguards.<br><br>
+          <strong>Retention:</strong> during PMS relationship and post-closure as per
+          SEBI PMS Regulations; then archived/anonymised/deleted.
+        </div>
+      </details>
+    </div>
+
+    <!-- COMPLIANCE -->
+    <div class="subcard">
+      <div class="subhead">
+        <h3>Compliance, audit & regulatory reporting</h3>
+        <button class="toggle" aria-checked="true" disabled><span class="knob"></span></button>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="label">Purpose</div>
+          <ul>
+            <li>SEBI PMS compliance and inspections</li>
+            <li>Audit logs and regulatory reporting</li>
+          </ul>
+        </div>
+        <div>
+          <div class="label">Withdrawal impact</div>
+          <div class="small">Mandatory under law and cannot be disabled.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETING -->
+    <div class="subcard">
+      <div class="subhead">
+        <h3>Offers & PMS updates</h3>
+        <button class="toggle" aria-checked="false"><span class="knob"></span></button>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="label">Purpose</div>
+          <ul>
+            <li>PMS strategy updates and value-added communications</li>
+          </ul>
+        </div>
+        <div>
+          <div class="label">Withdrawal impact</div>
+          <div class="small">
+            Optional. You can withdraw anytime without affecting PMS servicing.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+</main>
+
+<section class="footer">
+  <h4>Your Rights</h4>
+  <div class="cols">
+    <div class="small">
+      <ul>
+        <li>Access and review your personal data</li>
+        <li>Withdraw optional consent</li>
+        <li>Raise grievances</li>
+      </ul>
+    </div>
+    <div class="small">
+      Withdrawal is available via the consent dashboard and is as easy as giving consent.
+    </div>
+    <div class="small">
+      <strong>DPO / Grievance Officer:</strong> [contact details]
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
